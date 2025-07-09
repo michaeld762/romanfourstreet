@@ -20,6 +20,33 @@
     .section {
       margin-bottom: 2em;
     }
+    form {
+      margin-top: 2em;
+      padding: 1em;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    input[type="email"], textarea {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button[type="submit"] {
+      padding: 0.5em 1em;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -28,7 +55,6 @@
   <div class="section">
     <h2>Setup</h2>
     <ul>
-      <li>Roman four street builds off existing Texas Holdem Rules - therefore knowledge of NLH is required. RFS uses elements from NLH including, but not limited to; betting order, minimum bet sizing, and hand rankings.</li>
       <li>Dealer deals each player cards clockwise:</li>
       <ul>
         <li>1–4 players: 6 cards each</li>
@@ -42,26 +68,20 @@
   <div class="section">
     <h2>The Board</h2>
     <ul>
-      <li>The dealer lays out the board in the specified Roman Four Street layout (image reference). The dealer always deals from their perspective.</li>
-      <img src = "https://github.com/michaeld762/romanfourstreet/blob/main/image_67513345.JPG?raw=true" style="width: 25%; height: auto;">
+      <li>The dealer lays out the board in the specified Roman Four Street layout (image reference).</li>
       <li>The board has four streets.</li>
-      <li>The streets are annotated as follows, from the perspective of the dealer:</li>
-      <ol>Vertical Street</ol>
-      <ol>Horizontal Top Street</ol>
-      <ol>Horizontal Middle Street</ol>
-      <ol>Horizontal Bottom Street</ol>
     </ul>
   </div>
 
   <div class="section">
     <h2>Blinds & Card Allocation</h2>
     <ul>
-      <li>Small and big blinds are placed on the vertical street.</li>
+      <li>Small and big blinds are placed on the vertical (North/South) street.</li>
       <li>Each player allocates two cards to each street, attempting to form the best 5-card hand per street (as in standard No-Limit Hold'em).</li>
-      <li>Allocations are done one street at a time, starting under the gun.</li>
+      <li>Allocations are done one street at a time.</li>
       <li>You can’t allocate cards to the same street more than once.</li>
       <li>Use card protectors or markers to indicate card allocations per street.</li>
-      <li>Each allocation requires an ante equal to the big blind amount.</li>
+      <li>Each allocation requires an ante equal to the small blind amount.</li>
     </ul>
   </div>
 
@@ -69,7 +89,7 @@
     <h2>Middle Street Bidding</h2>
     <ul>
       <li>Players bid to eliminate 2 cards from the 7-card middle (horizontal) street.</li>
-      <li>Bidding occurs left to right from the dealer’s perspective, then again right to left.</li>
+      <li>Bidding occurs left to right (East to West) from the dealer’s perspective, then again right to left.</li>
       <li>Bids (chips) are placed directly on top of each card.</li>
       <li>The two cards with the highest bids are removed, and their bids go into the middle street pot.</li>
       <li>If there's a tie, tied cards are rebid on. If a tie persists, cards (excluding the face-down center card) are shuffled and randomly eliminated until only 5 remain.</li>
@@ -81,10 +101,22 @@
     <ul>
       <li>Betting starts with the vertical street after the top and bottom cards are flipped.</li>
       <li>Only players active on that street may bet, check, raise, or fold.</li>
-      <li>Once the 3rd and 4th middle cards are revealed (and also the 4 additional hidden cards on horizontal top and bottom streets), players may bet again on the vertical and then the horizontal top and bottom streets—one street at a time.</li>
-      <li>Finally, flip the last middle card and allow additional betting on the vertical and horizonal middle streets.</li>
+      <li>Once the 3rd and 4th middle cards are revealed, players may bet on the middle and side (East/West) streets—one street at a time.</li>
+      <li>Finally, flip the last middle card and allow additional betting on the vertical and middle streets.</li>
       <li>Players may fold a specific street while remaining active on others.</li>
     </ul>
+  </div>
+
+  <div class="section">
+    <h2>Sign Up for the RFS Newsletter</h2>
+    <form action="https://formspree.io/f/xpwrvaaz" method="POST">
+      <label for="email">Your email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Your message (optional):</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p style="font-size: 0.9em; color: #666;">We'll never share your email with anyone else.</p>
   </div>
 </body>
 </html>
